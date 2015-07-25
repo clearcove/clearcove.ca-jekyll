@@ -1,0 +1,24 @@
+---
+title: ClearCove Blog
+layout: page
+---
+
+<table class="table">
+  {% for post in paginator.posts %}
+    <tr>
+      <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+      <td class="nowrap">{{ post.date | date: "%b %-d, %Y" }}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <div class="pull-right">
+      <a href="{{ paginator.previous_page_path }}" class="previous">Newer posts &rarr;</a>
+    </div>
+  {% endif %}
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">&larr; Older posts</a>
+  {% endif %}
+</div>

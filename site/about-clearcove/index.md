@@ -1,13 +1,6 @@
 ---
 title: About ClearCove Software Inc.
-author: jhund
 layout: page
-syntaxhighlighter_encoded:
-  - 1
-other_media:
-  - 
-main_video:
-  - 
 ---
 <p class="lead unconstrained" style="text-align: left;">
   We build and support web applications for our clients. We are specialized in the Ruby language and the Ruby on Rails web application framework. Most of our experience is in the areas of online collaboration, learning, publishing and workflow automation.
@@ -15,21 +8,21 @@ main_video:
 
 <div class="well">
   <div class="marginalia_right">
-    <img class="img-polaroid" style="width: 200px;" alt="Jo Hund" src="/wp-content/uploads/2008/07/portraitjo_medium-300x225.jpg" /></p> 
-    
+    <img class="img-polaroid" style="width: 200px;" alt="Jo Hund" src="/images/2008/07/portraitjo_medium-300x225.jpg" /></p>
+
     <div class="img_caption">
       Hi there, I&#8217;m Jo Hund
     </div>
   </div>
-  
+
   <p class="unconstrained">
     I started professional Ruby on Rails development in 2005 and founded my ClearCove Rails consultancy in 2006. Since then I have practiced Ruby on Rails development for more than 10,000 hours. They say that&#8217;s how long it takes to truly become an expert.
   </p>
-  
+
   <p class="unconstrained">
     Being a 1-person company doesn&#8217;t mean I do all the work myself. I prefer to operate like movie production teams who band together for specific projects: Depending on a project&#8217;s nature and requirements, I team up with partners in areas such as design, strategy, copy writing, software development, project management, etc.
   </p>
-  
+
   <p>
     Jo Hund, founder of ClearCove Software, Inc.
   </p>
@@ -40,11 +33,11 @@ main_video:
     <h3>
       Clients
     </h3>
-    
+
     <p>
       <span style="line-height: 1.5em;">We are privileged to work with fantastic clients, primarily in the area of online collaboration, training, publishing, and workflow automation. Some of our clients include the International Baccalaureate, the Government of British Columbia, and many more. We have developed the following types of applications for our clients:</span>
     </p>
-    
+
     <ul>
       <li>
         Publishing automation &#8211; document management, conversion, and validation.
@@ -74,15 +67,15 @@ main_video:
         Collaboration tools for non-profit organizations.
       </li>
     </ul>
-    
+
     <h3>
       <span style="line-height: 1.5em;">Experience</span>
     </h3>
-    
+
     <p>
       We have implemented the following features in several dozen Ruby on Rails production applications:
     </p>
-    
+
     <ul>
       <li>
         A/B testing
@@ -191,12 +184,12 @@ main_video:
       </li>
     </ul>
   </div>
-  
+
   <div class="span5 offset1">
     <h3>
       Quick facts
     </h3>
-    
+
     <ul>
       <li>
         Location: Comox, Vancouver Island, BC, Canada
@@ -211,11 +204,11 @@ main_video:
         Founded: 2006
       </li>
     </ul>
-    
+
     <h3>
       We offer the following services:
     </h3>
-    
+
     <ul>
       <li>
         Application development
@@ -236,15 +229,15 @@ main_video:
         Code reviews
       </li>
     </ul>
-    
+
     <h3>
       Production technologies
     </h3>
-    
+
     <p>
       Below is a list of our current technology preferences for production systems:
     </p>
-    
+
     <ul>
       <li>
         Application software: Object oriented Ruby, Ruby on Rails

@@ -1,11 +1,10 @@
 ---
 title: About Jo Hund
-author: jhund
 layout: page
 ---
 <div class="marginalia_right" style="width: 320px;">
-  <img class="img-polaroid" title="Jo Hund" alt="Jo Hund" src="/wp-content/uploads/2008/07/portraitjo_medium-300x225.jpg" width="300" height="225" /></p> 
-  
+  <img class="img-polaroid" title="Jo Hund" alt="Jo Hund" src="/images/2008/07/portraitjo_medium-300x225.jpg" width="300" height="225" /></p>
+
   <div class="img_caption">
     Outside of work, Jo is a husband, father, photographer, trail runner and open water rower. He lives in the beautiful Comox Valley on Vancouver Island, Canada.
   </div>
