@@ -1,0 +1,58 @@
+---
+layout: post
+title: Default vs. tuned Ruby Garbage Collector
+date: 2013-06-14 14:06:57.000000000 -07:00
+categories:
+- Blog
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: '1'
+author:
+  login: jhund
+  email: jhund@clearcove.ca
+  display_name: jhund
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p><strong>TL;DR</strong>: I'm not sure if tuning the garbage collector on Ruby 2.0 really helps...Tuning the Ruby Garbage collector is low hanging fruit if you want to improve your Rails app's boot time and ongoing performance; and dtrace is very powerful.</p>
+<p>I was investigating some memory issues for a Rails app and used dtrace/Instruments to find out what was going on. Using the Instruments app on OS X, I visualized what a default vs. a tuned Ruby garbage collector looks like. I tested this on a sidekiq process that I launched with and without GC tuning. I sampled after a few minutes of running, so we're looking at a stable process with all static classes loaded.</p>
+<p>The two charts below are screenshots of the OS X Instruments app (a gui for dtrace). Both show the same time scale. Each vertical line in the "Ruby GC" row indicates a garbage collector run. The "Allocations" row shows the amount of memory allocated in the Ruby process heap.</p>
+<h2>Ruby process without GC tuning</h2>
+<p><a href="http://clearcove.ca/wp-content/uploads/2013/06/ruby_gc_untuned.png"><img class="alignnone size-full wp-image-1647" alt="ruby_gc_untuned" src="assets/ruby_gc_untuned.png" width="904" height="442" /></a></p>
+<h2>Ruby process with GC tuning</h2>
+<p><a href="http://clearcove.ca/wp-content/uploads/2013/06/ruby_gc_tuned.png"><img class="alignnone size-full wp-image-1649" alt="ruby_gc_tuned" src="assets/ruby_gc_tuned.png" width="900" height="442" /></a></p>
+<h2>Analysis</h2>
+<p>The default GC runs a lot more frequently than the tuned one. And keep in mind that this is a stable process. The effect would be even more dramatic when starting up the process and the heap grows at a much faster rate.</p>
+<ul>
+<li>Default GC: Runs on average every 2 seconds</li>
+<li>Tuned GC: Runs on average every 30 seconds</li>
+</ul>
+<p>The default RUBY_GC_MALLOC_LIMIT is 8MB. We changed it to 90MB. That means the Ruby GC only runs after 90MBs have been allocated on the heap. Our large Rails app sits at about 170MB, so booting the app will trigger 2 garbage collections with a tuned GC, and 20+ with the default GC. Tuning the GC reduces the boot time significantly.</p>
+<p>Boot time of app in production mode:</p>
+<ul>
+<li>Default GC: 15 seconds</li>
+<li>Tuned GC: 20 seconds (OOPS!!! it's actually longer...)</li>
+</ul>
+<h2>Test setup</h2>
+<ul>
+<li><span style="line-height: 13px;">Ruby 2.0.0-p195 (the dtrace probes were added in Ruby 2.0)</span></li>
+<li>Rails 3.2.13</li>
+<li>Rails production environment to cache all classes.</li>
+<li>Invocation of process without GC tuning: RAILS_ENV=production bundle exec sidekiq -C config/sidekiq.yml</li>
+<li>Invocation of process with CG tuning: RAILS_ENV=production RUBY_GC_MALLOC_LIMIT=90000000 RUBY_FREE_MIN=200000 bundle exec sidekiq -C config/sidekiq.yml</li>
+<li>Mac OS X</li>
+<li>Instruments/dtrace</li>
+<li>Custom instrument to record Ruby garbage collection:<br />
+<a href="http://clearcove.ca/wp-content/uploads/2013/06/ruby_gc_custom_instrument.png"><img class="alignnone size-full wp-image-1651" alt="ruby_gc_custom_instrument" src="assets/ruby_gc_custom_instrument.png" width="824" height="500" /></a></li>
+</ul>
+<h2>Conclusions</h2>
+<p>I recommend you take the few minutes to tune the garbage collector for your Rails app to improve startup time and ongoing performance (todo: link to other tests).</p>
+<h2>Additional resources</h2>
+<ul>
+<li><span style="line-height: 13px;"> </span></li>
+</ul>

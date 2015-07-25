@@ -1,0 +1,53 @@
+---
+layout: post
+title: How to increase max stack size for Ruby 2.0 when experiencing (SystemStackError)
+  "stack level too deep"
+date: 2013-10-11 09:42:59.000000000 -07:00
+categories:
+- Blog
+tags: []
+status: publish
+type: post
+published: true
+meta: {}
+author:
+  login: jhund
+  email: jhund@clearcove.ca
+  display_name: jhund
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>We process a lot of HTML documents using Nokogiri. On large HTML files we sometimes get the (SystemStackError) "stack level too deep" exception. This happens because Nokogiri recursively processes the dom, and on large documents it exceeds the maximum stack size of 1024 KB on our system.</p>
+<p>In Ruby versions before Dec. 2012, the Ruby stack size was limited by the C stack size which can be changed using the 'ulimit -s' command. In Ruby 2.0 the stack size is now limited via its own environment variable RUBY_THREAD_VM_STACK_SIZE.</p>
+<p>We address the problem by setting this env variable to a higher value when launching our ruby processes.</p>
+<p>Here is some code to try this yourself:</p>
+<p>First launch a Ruby console</p>
+<pre>irb</pre>
+<p>Then inspect your current max stack size</p>
+<pre>irb(main):052:0&gt; ENV['RUBY_THREAD_VM_STACK_SIZE']
+=&gt; "1048576"</pre>
+<p>You can also look at all the default settings for the VM:</p>
+<pre>irb(main):001:0&gt; RubyVM::DEFAULT_PARAMS
+=&gt; {:thread_vm_stack_size=&gt;1048576,
+    :thread_machine_stack_size=&gt;1048576,
+    :fiber_vm_stack_size=&gt;131072,
+    :fiber_machine_stack_size=&gt;524288}</pre>
+<p>Now run the program below and modify the upper limit from 7600 to 7700. You will see it work with 7600 and exit with SystemStackError for 7700:</p>
+<pre>upper_limit = 7600 # 7600 works, 7700 doesn't
+
+def so(arg, count)
+  r = if count &lt; upper_limit
+    ('A') + so(arg, count + 1)
+  else
+    arg
+  end
+  r
+end
+
+so('a', 0)</pre>
+<p>In order to make it work with 7700, quit your irb and re-launch it with modified max stack size:</p>
+<pre>export RUBY_THREAD_VM_STACK_SIZE=2000000
+irb</pre>
+<p>Link: <a href="http://permalink.gmane.org/gmane.comp.lang.ruby.cvs/41626">[ruby-cvs:45648] ko1:r38478 (trunk): * vm.c: support variable VM/Machi</a> via permalink.gmane.org</p>

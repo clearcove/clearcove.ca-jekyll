@@ -1,0 +1,219 @@
+---
+layout: post
+title: 'Recipe: RESTful search for Rails'
+date: 2008-12-14 16:14:33.000000000 -08:00
+categories:
+- Ruby/Rails
+tags:
+- broadcast
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _wp_old_slug: recipe-restful-search-for-rail
+  main_video: ''
+  other_media: ''
+  _syntaxhighlighter_encoded: '1'
+author:
+  login: jhund
+  email: jhund@clearcove.ca
+  display_name: jhund
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>This recipe shows you how to search, filter, and sort your resource lists in a restful way. We will look at the most simple way to accomplish this and then provide some pointers to further improvements. This recipe works great with will_paginate. It is an end to end solution (model, view, and controller). This recipe requires Rails 2.2.2 or greater if you want to use :joins in named scopes. Otherwise Rails 2.0 is sufficient.</p>
+<p><!--more--></p>
+<p>Here is what you will get from this recipe:</p>
+<p>[caption id="attachment_369" align="alignnone" width="300" caption="List options in the Quentin time tracker"]<a href="http://clearcove.ca/wp-content/uploads/2008/12/quentinlistoptions.jpg"><img src="assets/quentinlistoptions-300x96.jpg" alt="List options in the Quentin time tracker" title="quentin_list_options" width="300" height="96" class="size-medium wp-image-369" /></a>[/caption]</p>
+<h2>Overview</h2>
+<p>Named scopes are an important ingredient to this recipe. I consider them one of the most useful features that have been added to Rails lately. Key is to name them properly and then you can use the scopes' names all the way from the view, via controller, to the model. Super convenient and clean.</p>
+<p>Here is what we do:</p>
+<h3>Model</h3>
+<ul>
+<li>Define a named scope for every search/filter dimension</li>
+<li>Define a method called 'filter' to retrieve the records from the DB</li>
+<li>Define a method called 'list_option_names' to get a list of possible list options</li>
+</ul>
+<h3>Controller</h3>
+<ul>
+<li>In the index action, call the Activity.filter method instead of Activity.find</li>
+<li>Add a private method 'load_list_options' to extract the options from the request</li>
+</ul>
+<h3>View</h3>
+<ul>
+<li>Add a form to your resource list to define the list options</li>
+<li>Render the resources as list</li>
+</ul>
+<h2>Example code</h2>
+<p>As an example application we use a time tracker (See <a href="http://github.com/jhund/quentin" alt="Quentin on github">Quentin</a> on github). The resource we want to search on are Activities. Every task has a number of Activities for time worked on this task. And each Activity belongs to a Client and Project.</p>
+<p>You can look at the code below or go straight to <a href="http://github.com/jhund/rails-recipes" alt="Quentin on github">my Rails recipes on github</a> where I have a sparse Rails app with all the bits and pieces required for RESTful searching in Rails.</p>
+<h3>Model</h3>
+<p>First of all let's define some named scopes that we can use for our searching:</p>
+<p>[code language="ruby"]<br />
+# In app/models/activity.rb</p>
+<p>named_scope :search, lambda{ |query|<br />
+    q = &quot;%#{query.downcase}%&quot;<br />
+    { :conditions =&gt; ['lower(activities.description) LIKE ?', q] } }<br />
+named_scope :for_project, lambda { |project_ids|<br />
+    { :conditions =&gt; ['activities.project_id IN (?)', [*project_ids]] } }<br />
+# don't call the below 'sort_by'. There seems to be some naming conflict<br />
+named_scope :sorted_by, lambda { |sort_option|<br />
+    case sort_option.to_s<br />
+    when 'most_recent'<br />
+      { :order =&gt; 'activities.created_at DESC' }<br />
+    when 'client_project_name_a_to_z'<br />
+      { :order =&gt; 'lower(clients.name) ASC, lower(projects.name) ASC',<br />
+        :joins =&gt; {:project =&gt; :client} }<br />
+    when 'duration_shortest_first'<br />
+      { :order =&gt; 'activities.duration ASC' }<br />
+    when 'duration_longest_first'<br />
+      { :order =&gt; 'activities.duration DESC' }<br />
+    else<br />
+      raise(ArgumentError, &quot;Invalid sort option: #{sort_option.inspect}&quot;)<br />
+    end }<br />
+[/code]</p>
+<p>All of my searchable resources have the 'search' and the 'sorted_by' named scope. They are used for indexed searching (in this case just using the database LIKE method), and sorting. Starting with Rails 2.2 you can also use :joins in named_scopes to extend your searches across multiple tables.</p>
+<p>The :for_project named scope accepts project_ids either as array or as single integer. The [*project_ids] converts either into an array of params for the SQL 'IN' clause.</p>
+<p>Then we need to define the filter method that composes the query and retrieves the records from the database. This is a class method on Activity:</p>
+<p>[code language="ruby"]<br />
+# In app/models/activity.rb</p>
+<p># applies list options to retrieve matching records from database<br />
+def self.filter(list_options)<br />
+  raise(ArgumentError, &quot;Expected Hash, got #{list_options.inspect}&quot;) \<br />
+      unless list_options.is_a?(Hash)<br />
+  # compose all filters on AR Collection Proxy<br />
+  ar_proxy = Activity<br />
+  list_options.each do |key, value|<br />
+    next unless self.list_option_names.include?(key) # only consider list options<br />
+    next if value.blank? # ignore blank list options<br />
+    ar_proxy = ar_proxy.send(key, value) # compose this option<br />
+  end<br />
+  ar_proxy # return the ActiveRecord proxy object<br />
+end<br />
+[/code]</p>
+<p>The method above is where the magic happens. The really cool thing about named scopes is that they are <a href="http://en.wikipedia.org/wiki/Composability">composable</a>. This is a really powerful concept where we chain together all the conditions that were defined in the resource filter form. Rails will defer the single DB query with all the conditions until it actually needs the collection. This is what makes this approach so efficient.</p>
+<p>The 'list_option_names' method returns the names of the list options we use. Again, we use a cool feature of named scopes where we can reflect on the defined named scopes and just remove the ones that are not part of the list options.</p>
+<p>[code language="ruby"]<br />
+# In app/models/activity.rb</p>
+<p># returns array of valid list option names<br />
+def self.list_option_names<br />
+  self.scopes.map{|s| s.first} - [:named_scope_that_is_not_a_list_option]<br />
+end<br />
+[/code]</p>
+<h3>Controller</h3>
+<p>The controller has two jobs in this recipe:</p>
+<ul>
+<li>Get the list options from the submitted resource search form</li>
+<li>Make the current list options accessible to the resource search form for display</li>
+</ul>
+<p>Define the following methods in the activities controller:</p>
+<p>We use the index option to render the search results. It behaves like a normal index action if no list_options are given. If they are given, they will be considered when retrieving records from the Database.</p>
+<p>[code language="ruby"]<br />
+# In app/controllers/activities_controller.rb</p>
+<p>def index<br />
+  @list_options = load_list_options<br />
+  @activities = Activity.filter(@list_options).paginate(:page =&gt; params[:page])<br />
+end<br />
+[/code]</p>
+<p>Of course you can add a response block and render the results to HTML, XML, CSV, etc. Notice how I use will_paginate exactly like I would use it with a normal Activity.find.</p>
+<p>The 'load_list_options' method builds the hash of list options for this request:</p>
+<p>[code language="ruby"]<br />
+# In app/controllers/activities_controller.rb</p>
+<p>private</p>
+<p>def load_list_options<br />
+  # define default list options here. They will be used if none are given<br />
+  options = {:sorted_by =&gt; 'most_recent'}<br />
+  # find relevant query parameters and override list options<br />
+  Activity.list_option_names.each do |name|<br />
+    options[name] = params[name] unless params[name].blank?<br />
+  end<br />
+  options<br />
+end<br />
+[/code]</p>
+<p>We use the list of list_option_names to extract the relevant params and store them in an instance variable so that they are available to the view.</p>
+<h3>View</h3>
+<p>Finally we get to see the results of all this work:</p>
+<p>[code language="html"]<br />
+# In app/views/activities/index.html.erb</p>
+<p>&lt;h1&gt;Activities&lt;/h1&gt;<br />
+&lt;!-- &lt;pre&gt;&lt;%#= @list_options.to_yaml %&gt;&lt;/pre&gt; --&gt;</p>
+<p>&lt;div id=&quot;list_options&quot;&gt;<br />
+  &lt;% form_tag(activities_path, :method =&gt; :get) do %&gt;<br />
+    &lt;dl&gt;<br />
+      &lt;dt&gt;Search&lt;/dt&gt;<br />
+      &lt;dd&gt;&lt;%= text_field_tag('search', @list_options[:search]) %&gt;&lt;/dd&gt;<br />
+      &lt;dt&gt;Project&lt;/dt&gt;<br />
+      &lt;dd&gt;<br />
+        &lt;%= select_tag('for_project', options_for_select(<br />
+          Project.all_with_client.sorted_by('client_and_name_a_to_z').map{|p|<br />
+              [p.client_and_name, p.id.to_s]}.unshift(['- Any -', nil]),<br />
+          @list_options[:for_project])) %&gt;<br />
+      &lt;/dd&gt;<br />
+      &lt;dt&gt;Sorted by&lt;/dt&gt;<br />
+      &lt;dd&gt;<br />
+        &lt;%= select_tag('sorted_by',options_for_select(<br />
+          [<br />
+            ['most recent', 'most_recent'],<br />
+            ['client, project name (a-z)', 'client_project_name_a_to_z'],<br />
+            ['duration (longest first)', 'duration_longest_first'],<br />
+            ['duration (shortest first)', 'duration_shortest_first']<br />
+          ],<br />
+          @list_options[:sorted_by])) %&gt;<br />
+      &lt;/dd&gt;<br />
+      &lt;dt&gt;&lt;/dt&gt;<br />
+      &lt;dd&gt;<br />
+        &lt;%= submit_tag &quot;Update list&quot; %&gt; or<br />
+        &lt;%= link_to('Reset', activities_path) %&gt;<br />
+      &lt;/dd&gt;<br />
+    &lt;/dl&gt;<br />
+  &lt;% end %&gt;<br />
+&lt;/div&gt;</p>
+<p>&lt;div class=&quot;pagination_group&quot;&gt;<br />
+  &lt;%= will_paginate(@activities) %&gt;<br />
+  &lt;%= page_entries_info(@activities) %&gt;<br />
+&lt;/div&gt;</p>
+<p>&lt;div&gt;<br />
+  &lt;table&gt;<br />
+    &lt;tr&gt;<br />
+      &lt;th&gt;Client | Project&lt;/th&gt;<br />
+      &lt;th&gt;Description&lt;/th&gt;<br />
+      &lt;th&gt;Duration&lt;/th&gt;<br />
+      &lt;th&gt;Date&lt;/th&gt;<br />
+    &lt;/tr&gt;<br />
+    &lt;% @activities.each do |activity| %&gt;<br />
+      &lt;%= render :partial =&gt; activity %&gt;<br />
+    &lt;% end %&gt;<br />
+  &lt;/table&gt;<br />
+&lt;/div&gt;<br />
+[/code]</p>
+<p>A few comments on the view:</p>
+<ul>
+<li>Near the top is some commented out code that is helpful for debugging list options.</li>
+<li>The form submits to the standard route for the activities index action via the GET method. This has the advantage that you can bookmark a particular search and link to it directly with all the search params in the URL.</li>
+<li>The search inputs are standard form fields that get their default values from the @list_options hash. So you always see what the settings for the current search are.</li>
+<li>For the 'Project' select input, I add the 'Any' option with a nil value. The 'Any' option will be ignored when composing the AR conditions because the value is nil. This is exactly what we want: If we don't want a particular client, then the named scope 'with_client' should not be used.</li>
+<li>Also on the client select, note that I typecast the id to string. This is important to show the correct selected option, because all @list_options params are in string format from the request params.</li>
+<li>Finally the 'Reset' link just points to the index action with no params given. In this case the default list options will be used.</li>
+<li>I added basic code for pagination. See <a href="http://github.com/mislav/will_paginate">will_paginate documentation</a> for more info.</li>
+<li>Finally the list of resources is rendered using a partial.</li>
+</ul>
+<h2>Additional features</h2>
+<ul>
+<li>Sometimes it makes sense to persist the list options in the session so the list remembers my settings when I come back to it during the same session. The place to do this is in the controller's 'load_list_options' method.</li>
+<li>You could Ajaxify this quite easily; I decided not to show it to make the essential stuff more visible.</li>
+<li>Add preset links for common filter settings: [code language="html"]link_to('Longest phone calls', activities_path(:search =&gt; 'call', :sorted_by =&gt; 'duration_longest_first'))[/code]</li>
+<li>Namespace the list option params. Form input fields would be 'list_options[sorted_by]' instead of 'sorted_by'. This might be necessary if you have a more complex app where there might be parameter name conflicts.</li>
+<li>Make @list_options an AR object so you can use the 'form_for(...) do |f|' form, validations, and datetime type casts in your filter forms. You can also save searches for later use.</li>
+<li>Use a form builder to build the filter control inputs. This way you could minimize the filter form portion of your view code (example: f.sort_by_select).</li>
+<li>I haven't tried it, but you might be able to use subqueries in your named_scopes as well. See <a href="http://pivotallabs.com/users/jsusser/blog/articles/567-hacking-a-subselect-in-activerecord">this article</a> for more info.</li>
+</ul>
+<h2>Other resources</h2>
+<ul>
+<li>Railscasts <a href="http://railscasts.com/episodes/37">episode 37</a> (full stack solution, doesn't use named scopes)</li>
+<li><a jref="http://www.bencurtis.com/archives/2008/06/restful-searching-in-rails/">Ben Curtis</a> (full stack solution, doesn't use named scopes)</li>
+<li><a href="http://www.caboo.se/articles/2008/8/26/the-awesomest-filter-and-sort-ever"> Courtenay</a> (uses named_scopes, puts stuff in the controller that doesn't belong there, thanks for the tip on the :joins bug)</li>
+<li><a href="http://github.com/technoweenie/can_search/tree/master">TechnoWeenie</a> (not a full stack solution. Provides convenience named_scopes for AR models)</li>
+</ul>

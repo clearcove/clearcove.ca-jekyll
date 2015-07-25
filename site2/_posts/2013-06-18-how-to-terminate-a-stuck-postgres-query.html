@@ -1,0 +1,38 @@
+---
+layout: post
+title: How to terminate a stuck Postgres query
+date: 2013-06-18 06:48:42.000000000 -07:00
+categories:
+- Blog
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+author:
+  login: jhund
+  email: jhund@clearcove.ca
+  display_name: jhund
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>Sometimes a long running query in Postgres can get stuck and you need to kill it. This recipe outlines the steps to do so. A few notes:</p>
+<ul>
+<li><span style="line-height: 13px;">This recipe does not require console access to the server. </span></li>
+<li><span style="line-height: 13px;">You need a way to run a postgresql command. I used Navicat. psql or a Rails console work, too.</span></li>
+<li><span style="line-height: 13px;">Tested on Postgresql 9.2 on heroku postgres.<br />
+</span></li>
+</ul>
+<p>And here are the instructions:</p>
+<ol>
+<li>Get a list of all currently active connections on the Postgres server. Run the query below on the server:<br />
+<code>SELECT * FROM pg_stat_activity ORDER BY client_addr ASC, query_start ASC</code></li>
+<li>Each row in the results table corresponds to a postgres process. Find the row for the process you want to kill by looking at the 'current_query' column.</li>
+<li>Record the process id. You can find it in the 'procpid' column from the row that contains the query you want to kill.</li>
+<li>Kill the process by running the following query (replace '&lt;pid&gt;' with the process id you found in step 3):<br />
+<code>SELECT pg_cancel_backend(&lt;pid&gt;)</code></li>
+<li>Reload the query from step 1 to confirm that the process is gone.</li>
+</ol>

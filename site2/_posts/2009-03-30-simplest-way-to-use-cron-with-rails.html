@@ -1,0 +1,50 @@
+---
+layout: post
+title: Simplest way to use cron with Rails
+date: 2009-03-30 20:07:21.000000000 -07:00
+categories:
+- Note to self
+- Ruby/Rails
+tags:
+- broadcast
+status: publish
+type: post
+published: true
+meta:
+  syntaxhighlighter_encoded: '1'
+  _edit_last: '1'
+author:
+  login: jhund
+  email: jhund@clearcove.ca
+  display_name: jhund
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>For simple applications I use cron to run automated background jobs like sending emails or indexing sphinx.</p>
+<p>I like to have all aspects of my application under version control. Cron is no exception. To do this, I add a file named "crontab" in /config. In there I add all my cron jobs in regular cron notation.</p>
+<p><!--more--><br />
+Then I add something like this to my capistrano deploy recipe:</p>
+<p>[ruby]<br />
+task :after_update_code, :roles =&gt; :app do<br />
+  # Install crontab<br />
+  # IMPORTANT: works only if this is the only instance of app<br />
+  # running under this user account<br />
+  run &quot;crontab -u #{user} #{release_path}/config/crontab&quot;<br />
+end<br />
+[/ruby]</p>
+<p>Now every time I deploy, capistrano updates the deploy user's crontab with the most current version.</p>
+<h2>When it doesn't work as expected...</h2>
+<p>... here are the places to look:</p>
+<p>First <strong>run the cron command on the command line</strong>. Run it as the same user as cron would run it. I typically use my deploy user to do everything: web server user, capistrano user, ssh user, cron user. This helps avoid issues with permissions. I also keep the app in the deploy user's home directory.</p>
+<p>If the command executes fine on the command line, however it doesn't from cron, then there is a good chance that you have <strong>differences in PATH or SHELL between cron and command line</strong>. To address this, set both in the crontab:</p>
+<p>[shell]<br />
+PATH=(your path...)<br />
+SHELL=(your shell...)<br />
+[/shell]</p>
+<p>To find out your deploy user's PATH and SHELL run these two commands as deploy user on the production server's command line:</p>
+<p>[shell]<br />
+echo $PATH<br />
+echo $SHELL<br />
+[/shell]</p>

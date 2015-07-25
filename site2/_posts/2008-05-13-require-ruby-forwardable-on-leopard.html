@@ -1,0 +1,30 @@
+---
+layout: post
+title: Require Ruby 'Forwardable' on Leopard
+date: 2008-05-13 21:54:52.000000000 -07:00
+categories:
+- Note to self
+- Ruby/Rails
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+author:
+  login: jhund
+  email: jhund@clearcove.ca
+  display_name: jhund
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>When I upgraded to Leopard, some of my Rails apps broke. Ruby threw this error at me:</p>
+<pre>uninitialized constant User::Forwardable</pre>
+<p>Here is a simple fix:</p>
+<pre>
+require 'forwardable'
+</pre>
+<p>in environment.rb.</p>
+<p>It seems that on Tiger 'Forwardable' was included by default, but not on Leopard any more. Not exactly sure why this is.</p>

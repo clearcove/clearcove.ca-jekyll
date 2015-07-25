@@ -1,0 +1,44 @@
+---
+layout: post
+title: How this blog works
+date: 2012-11-27 17:23:51.000000000 -08:00
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: '1'
+  syntaxhighlighter_encoded: '1'
+author:
+  login: jhund
+  email: jhund@clearcove.ca
+  display_name: jhund
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>This post is mostly for myself so I remember how to do things on the blog.</p>
+<h2>Fast facts</h2>
+<ol>
+<li>Blogging engine: Wordpress</li>
+<li>Theme: custom clearcove theme, based on WP default and Blueprint CSS</li>
+</ol>
+<h2>How tos:</h2>
+<dl>
+<dt>Publish source code</dt>
+<dd>[ruby]require 'forwardable'[/ruby]</dd>
+<dt>Change copy on the home page</dt>
+<dd>To format code using </dd>
+<dt>Publish blog post on front page</dt>
+<dd>Tag with 'broadcast'</dd>
+</dl>
+<h2>Tags</h2>
+<p>Tags are hidden in the front end. I use them for filtering:</p>
+<ul>
+<li>Front page shows newest blog post tagged with 'broadcast'</li>
+<li>I submit to newsfeeds only posts tagged with 'broadcast'</li>
+</ul>
+<h2>Upgrade wordpress</h2>
+<p>Use the wordpress-automatic-upgrade plugin and follow all the instructions. Important: Do the one step that asks you to click link that opens new window to do DB updates. The link to start the update process shows up right below the WP notice that says there is a new version.</p>

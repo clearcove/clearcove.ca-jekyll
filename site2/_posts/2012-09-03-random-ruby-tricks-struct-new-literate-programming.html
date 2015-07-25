@@ -1,0 +1,26 @@
+---
+layout: post
+title: 'Random Ruby Tricks: Struct.new - Literate Programming'
+date: 2012-09-03 14:00:34.000000000 -07:00
+categories:
+- Blog
+- Curated News
+tags: []
+status: publish
+type: post
+published: true
+meta: {}
+author:
+  login: jhund
+  email: jhund@clearcove.ca
+  display_name: jhund
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>Neat trick about using Ruby Struct for simple domain concepts:</p>
+<pre>Point = Struct.new(:x, :y)
+origin = Point(0,0)</pre>
+<p>Struct.new returns a class, which we assign to the Point constant. Very cool. We just created a simple class with constructor and two accessors (x and y).</p>
+<p>Link: <a href="http://bit.ly/OMnj8C">Random Ruby Tricks: Struct.new - Literate Programming</a> via blog.steveklabnik.com</p>

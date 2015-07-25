@@ -1,0 +1,26 @@
+---
+layout: post
+title: Fixing Inkscape on OS X Leopard
+date: 2008-06-11 20:58:21.000000000 -07:00
+categories:
+- Note to self
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+author:
+  login: jhund
+  email: jhund@clearcove.ca
+  display_name: jhund
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>After I upgraded to Leopard, Inkscape did not start up any more. Just a blank screen. Here is what I did to fix it:</p>
+<blockquote><p>If you like <a title="Inkscape" onclick="javascript:urchinTracker('/outbound/www.inkscape.org/');" href="http://www.inkscape.org/" target="_blank">Inkscape</a> (an open source alternative to Adobe Illustrator) and have a Mac with Leopard; you will figure that it after installation it will not work. It will say that font caching might take time, but never start. It’s because of a simple bug, with a simple solution. Just open a terminal (Applications/Utilities) and type this, followed by an enter;</p>
+<p><code>mkdir ~/.fontconfig</code><br />
+After that it should start normally.</p></blockquote>
+<p>Thanks to <a href="http://bloggy.kuneri.net/2008/05/14/how-to-run-inkscape-on-mac-leopard/">Kuneri</a> for this tip.</p>

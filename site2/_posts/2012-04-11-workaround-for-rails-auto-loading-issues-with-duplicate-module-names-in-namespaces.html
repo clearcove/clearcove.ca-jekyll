@@ -1,0 +1,26 @@
+---
+layout: post
+title: Workaround for Rails auto loading issues with duplicate module names in namespaces
+date: 2012-04-11 08:02:16.000000000 -07:00
+categories:
+- Blog
+- Curated News
+tags: []
+status: publish
+type: post
+published: true
+meta: {}
+author:
+  login: jhund
+  email: jhund@clearcove.ca
+  display_name: jhund
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>A workaround for Rails class loading issues where a namespaced module has the same name as a class:</p>
+<blockquote>
+<p>How to deal with load_missing_constant ambiguous behaviour?<br />It happens when you name your nested models like classes or modules being visible in global scope, consider User::Ticket and Ticket. Rails somehow fallbacks to ::Ticket when including User::Ticket. I bypass this by writing require_relative 'user/ticket' and include User::Ticket. I know, it is not perfect but good enough for now.</p>
+</blockquote>
+<p>Link: <a href="http://bit.ly/Hqsdp6">Separate your concerns</a> via sevos.github.com</p>

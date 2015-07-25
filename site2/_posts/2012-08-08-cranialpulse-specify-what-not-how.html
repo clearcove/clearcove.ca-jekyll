@@ -1,0 +1,26 @@
+---
+layout: post
+title: 'CranialPulse: Specify What, Not How'
+date: 2012-08-08 13:59:40.000000000 -07:00
+categories:
+- Blog
+- Curated News
+tags: []
+status: publish
+type: post
+published: true
+meta: {}
+author:
+  login: jhund
+  email: jhund@clearcove.ca
+  display_name: jhund
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>Some good thoughts about how to name and write specs in Ruby/RSpec. However I agree that there seems to be a bit too much abstraction/duplication and prefer the first commenter's approach:</p>
+<blockquote>
+<p>I worry about duplicating equality comparisons, so I'd probably do this instead, in each spec: convert(1).should == 'I'; convert(2).should == 'II', and so on. Then I define #convert inside my context to invoke Calculator.convert(actual). Not quite as cute, but avoids reimplementing parts of should equal to, as your example has done.</p>
+</blockquote>
+<p>Link: <a href="http://bit.ly/QfB13i">CranialPulse: Specify What, Not How</a> via www.cranialpulse.com</p>
