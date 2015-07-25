@@ -16,6 +16,9 @@ I tried two approaches:
     * I'll have to manually merge the two imports.
     * the rendered pages had broken characters and markup. Pretty much unusable.
     * I'll just use this to capture the missing pages and merge them into site.
+* site3: export Wordpress on June 23, 2015. I don't know what tool I used.
+    * it captured each page into a separate folder with an index.md file.
+      There is another copy of it in clearcove.ca-history.
 
 ## Site development
 
