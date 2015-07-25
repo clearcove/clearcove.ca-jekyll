@@ -2,7 +2,7 @@
 
 ## Start dev server
 
-* cd into `clearcove.ca-jekyll/site` directory
+* cd into the `clearcove.ca-jekyll` directory
 * launch jekyll server
       jekyll serve
   View site at
@@ -10,9 +10,12 @@
 
 ## Deploy
 
-* commit changes
-* push changes to github
+* Commit changes in gh-pages branch.
+* Push changes to github.
 
 ## Github setup
 
-I use Github pages to host clearcove.ca.
+* Work in branch `gh-pages`.
+* Create CNAME file.
+* Keep jekyll files in root directory.
+* Use `github-pages` gem to synch gem versions with those used at github.
