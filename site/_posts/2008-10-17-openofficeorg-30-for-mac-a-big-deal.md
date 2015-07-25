@@ -9,8 +9,8 @@ categories:
 it&#8217;s been officially released for a few days now and I think it is a big deal. OpenOffice.org 3.0 is a big step forward:
 
 <div id="attachment_261" style="width: 310px" class="wp-caption alignnone">
-  <img src="http://clearcove.ca/wp-content/uploads/2008/10/ooo-300x179.jpg" alt="OpenOffice.org 3.0 spreadsheet application" title="OpenOffice.org 3.0 on Mac OS X" width="300" height="179" class="size-medium wp-image-261" />
-  
+  <img src="http://clearcove.ca/images/2008/10/ooo-300x179.jpg" alt="OpenOffice.org 3.0 spreadsheet application" title="OpenOffice.org 3.0 on Mac OS X" width="300" height="179" class="size-medium wp-image-261" />
+
   <p class="wp-caption-text">
     OpenOffice.org 3.0 spreadsheet application
   </p>

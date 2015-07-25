@@ -6,7 +6,7 @@ permalink: /2015/01/remote-first-communication-for-project-teams/
 categories:
   - Blog
 ---
-<img class="iii-article-image" style="float: left; margin: 0 20px 20px 0; max-width: 250px; max-height: 150px;" src="http://d1u2s20mo6at4b.cloudfront.net/wp-content/uploads/BRYANELKUS_409730.jpg" alt="" />
+<img class="iii-article-image" style="float: left; margin: 0 20px 20px 0; max-width: 250px; max-height: 150px;" src="http://d1u2s20mo6at4b.cloudfront.net/images/BRYANELKUS_409730.jpg" alt="" />
 
 <p class="iii-article-excerpt">
   &#8220;If anyone is remote, you&#8217;re all remote.&#8221; At Atomic Object, we value co-located teams. But not every team member can always be co-located. Larger project teams may have members from multiple offices. Some projects might involve working closely with other vendors. I experience this &#8220;remoteness&#8221;&#8230;

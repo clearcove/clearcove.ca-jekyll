@@ -4,9 +4,9 @@ author: jhund
 layout: post
 permalink: /2008/12/recipe-restful-search-for-rails/
 main_video:
-  - 
+  -
 other_media:
-  - 
+  -
 categories:
   - Ruby/Rails
 tags:
@@ -19,8 +19,8 @@ This recipe shows you how to search, filter, and sort your resource lists in a r
 Here is what you will get from this recipe:
 
 <div id="attachment_369" style="width: 310px" class="wp-caption alignnone">
-  <a href="http://clearcove.ca/wp-content/uploads/2008/12/quentinlistoptions.jpg"><img src="http://clearcove.ca/wp-content/uploads/2008/12/quentinlistoptions-300x96.jpg" alt="List options in the Quentin time tracker" title="quentin_list_options" width="300" height="96" class="size-medium wp-image-369" /></a>
-  
+  <a href="http://clearcove.ca/images/2008/12/quentinlistoptions.jpg"><img src="http://clearcove.ca/images/2008/12/quentinlistoptions-300x96.jpg" alt="List options in the Quentin time tracker" title="quentin_list_options" width="300" height="96" class="size-medium wp-image-369" /></a>
+
   <p class="wp-caption-text">
     List options in the Quentin time tracker
   </p>

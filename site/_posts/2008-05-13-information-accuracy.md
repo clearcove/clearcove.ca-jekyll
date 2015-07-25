@@ -3,7 +3,7 @@ title: Make Better Decisions Based on More Accurate Information
 author: jhund
 excerpt: |
   Your information should reflect your business as closely as possible. If it doesn't, things can get really messy:
-  
+
   <ul>
     <li>information gets out of synch through various document revisions floating around in the email universe and on various users' hard drives</li>
     <li>information might be out of date because a collaborator used an old document version</li>
@@ -12,9 +12,9 @@ excerpt: |
 layout: post
 permalink: /2008/05/information-accuracy/
 main_video:
-  - 
+  -
 other_media:
-  - http://clearcove.ca/wp-content/uploads/2010/05/flickr-com-photos-kshathriya-8514296081.jpg
+  - http://clearcove.ca/images/2010/05/flickr-com-photos-kshathriya-8514296081.jpg
 categories:
   - Blog
 ---

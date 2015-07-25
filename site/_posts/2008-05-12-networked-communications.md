@@ -3,7 +3,7 @@ title: Increase Your Reach Through Networked Communications
 author: jhund
 excerpt: |
   Compared to traditional information distribution (paper documents), online communications offer a number of significant advantages:
-  
+
   <ul>
     <li>updates in real time facilitate collaboration</li>
     <li>everybody looks at the same version of the information</li>
@@ -13,7 +13,7 @@ excerpt: |
 layout: post
 permalink: /2008/05/networked-communications/
 other_media:
-  - http://clearcove.ca/wp-content/uploads/2010/05/flickr-com-photos-graylight-2614809191.jpg
+  - http://clearcove.ca/images/2010/05/flickr-com-photos-graylight-2614809191.jpg
 categories:
   - Business
 ---

@@ -3,7 +3,7 @@ title: Save time and money by moving your information processes online
 author: jhund
 excerpt: |
   Using our tools, you can save a lot of resources and frustration when working with your information:
-  
+
   <ul>
     <li>Automate information processing, analysis and distribution</li>
     <li>Avoid repetition</li>
@@ -14,9 +14,9 @@ excerpt: |
 layout: post
 permalink: /2008/05/information-efficienc/
 other_media:
-  - http://clearcove.ca/wp-content/uploads/2010/05/flickr-com-photos-clearlyambiguous-282747181.jpg
+  - http://clearcove.ca/images/2010/05/flickr-com-photos-clearlyambiguous-282747181.jpg
 main_video:
-  - 
+  -
 categories:
   - Blog
 ---
