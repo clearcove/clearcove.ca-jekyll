@@ -1,0 +1,28 @@
+body {
+
+  background-color: $gray-ultra-tint;
+
+  & > .header {
+    padding: 1em 0;
+  }
+
+  & > .page-content {
+
+    & > .container {
+      background-color: #fff;
+      border: 1px solid $gray-softer;
+      @include box-shadow(1px 1px 5px rgba(0,0,0,0.2));
+      padding-top: 2 * $baseLineHeight;
+      padding-bottom: 2 * $baseLineHeight;
+    }
+  }
+
+  & > .footer {
+    padding-top: $baseLineHeight;
+    padding-bottom: 3 * $baseLineHeight;
+  }
+}
+
+.avoid_page_break {
+  page-break-inside: avoid;
+}

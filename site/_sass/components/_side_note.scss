@@ -1,0 +1,30 @@
+.marginalia_right {
+  @extend .pull-right;
+  margin: 0 0 1em 1em;
+}
+
+.side_note_right {
+  @extend .marginalia_right;
+  @extend .well;
+  width: 20em;
+
+  font-size: 80%;
+  color: $gray-soft;
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .side_note_right {
+    width: 14em;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .side_note_right {
+    display: block;
+    width: auto;
+    float: none;
+    margin: 0 0 1em 0;
+  }
+}

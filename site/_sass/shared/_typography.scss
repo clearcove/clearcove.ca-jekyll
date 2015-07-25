@@ -1,0 +1,95 @@
+$body-color: #000;
+$body-family: Georgia, "Times New Roman", Times, serif;
+
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+
+@mixin default-heading() {
+  color: $gray-base;
+  font-weight: normal;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+@mixin h1() {
+  @include default-heading;
+  margin: $baseLineHeight*3 0 $baseLineHeight;
+}
+
+@mixin h2() {
+  @include default-heading;
+  margin: 2 * $baseLineHeight 0 $baseLineHeight;
+}
+
+@mixin h3() {
+  @include default-heading;
+  margin: 2 * $baseLineHeight 0 $baseLineHeight / 2;
+}
+
+@mixin h4() {
+  @include default-heading;
+  margin: 1.5 * $baseLineHeight 0 $baseLineHeight / 2;
+}
+
+h1 { @include h1; }
+h2 { @include h2; }
+h3 { @include h3; }
+h4 { @include h4; }
+
+
+body {
+  color: $body-color;
+  font-family: $body-family;
+}
+
+p {
+  font-family: $body-family;
+}
+
+blockquote {
+  line-height: 1.5;
+}
+
+ul, ol {
+}
+
+a {
+  cursor: pointer;
+  color: $blue-base;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  border:0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.nowrap { white-space: nowrap; }
+
+.annotation {
+  color: $gray-soft;
+  font-size: 70%;
+}
+
+.handwritten {
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.footer {
+  p {
+    text-align: left;
+  }
+}
+
+code {
+  color: inherit;
+  border: none;
+}
