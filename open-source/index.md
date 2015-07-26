@@ -180,3 +180,26 @@ A collection of Open Source projects we have released:
     </div>
   </div>
 </div>
+
+<div class="row-fluid">
+  <div class="span6">
+    <div class="well">
+      <h3>
+        Needleman Wunsch Aligner
+      </h3>
+
+      <p>
+        Find the optimal alignment of two sequences of Ruby Objects.
+      </p>
+
+      <ul>
+        <li>
+          <a href="https://github.com/jhund/needleman_wunsch_aligner">Documentation and source code on github</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="span5 offset1">
+  </div>
+</div>
