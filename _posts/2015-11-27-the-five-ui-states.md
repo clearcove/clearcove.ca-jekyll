@@ -6,7 +6,7 @@ permalink: /2015/11/the-five-ui-states
 
 Just found a great article about the [5 states every UI has to implement](http://scotthurff.com/posts/why-your-user-interface-is-awkward-youre-ignoring-the-ui-stack):
 
-![5 UI states](/images/2015/11/ui-stack.jpg "5 UI states")
+![5 UI states](/images/2015/11/ui-stack.jpg "5 UI states"){: .img-polaroid}
 
 ## Ideal State
 
