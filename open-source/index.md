@@ -201,5 +201,21 @@ A collection of Open Source projects we have released:
   </div>
 
   <div class="span5 offset1">
+    <div class="well">
+      <h3>
+        Tetris re-frame
+      </h3>
+
+      <p>
+        A browser based Tetris game implemented in ClojureScript using the 
+        <a href="https://github.com/Day8/re-frame">re-frame</a> application pattern.
+      </p>
+
+      <ul>
+        <li>
+          <a href="http://jhund.github.io/tetris-re-frame/">Demo with link to source</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
