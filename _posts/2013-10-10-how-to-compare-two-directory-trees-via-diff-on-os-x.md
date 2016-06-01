@@ -1,5 +1,5 @@
 ---
-title: how to compare two directory trees via diff on OS X
+title: How to compare two directory trees via diff on OS X
 author: jhund
 layout: post
 permalink: /2013/10/how-to-compare-two-directory-trees-via-diff-on-os-x/
@@ -10,7 +10,7 @@ This snippet will compare the two directory trees located at dir1 and dir2 and w
 
 <blockquote class="iii-article-quote">
   <p>
-    diff -qr dir1 dir2 | grep -v -e &#8216;DS_Store&#8217; -e &#8216;Thumbs&#8217; | sort > diffs.txt
+    diff -qr dir1 dir2 | grep -v -e '.DS_Store' -e 'Thumbs' -e '.git' | sort > diffs.txt
   </p>
 </blockquote>
 
