@@ -3,7 +3,7 @@ title: Ruby on Rails news
 layout: page
 ---
 
-<div id="ContentGemsWidget"></div>
+<div id="ContentGemsWidget" style="padding: 0;"></div>
 
 <script>
 window.ContentGemsWidgetOptions = {
