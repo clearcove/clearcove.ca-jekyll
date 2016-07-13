@@ -41,5 +41,5 @@ All right, I have to go back to my Smalltalk book now …
  [5]: http://en.wikipedia.org/wiki/Alan_Kay
  [6]: http://ruby.gemstone.com/
  [7]: http://www.squeak.org/Download/
- [8]: http://users.ipa.net/%7Edwighth/smalltalk/byte_aug81/design_principles_behind_smalltalk.html
+ [8]: https://www.cs.virginia.edu/~evans/cs655/readings/smalltalk.html
  [9]: http://www.iam.unibe.ch/~scg/SBE/
