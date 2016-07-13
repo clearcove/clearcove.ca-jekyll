@@ -3,7 +3,7 @@ title: Ruby on Rails news
 layout: page
 ---
 
-This news stream covers Ruby on Rails. It is best suited for intermediate and advanced developers:
+This news stream covers Ruby on Rails. It is geared towards intermediate and advanced developers:
 
 <div id="ContentGemsWidget" style="padding: 0;"></div>
 
