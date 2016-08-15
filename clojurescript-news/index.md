@@ -3,6 +3,8 @@ title: ClojureScript news
 layout: page
 ---
 
+This news stream covers ClojureScript with a focus on front end web development:
+
 <div id="ContentGemsWidget" style="padding: 0;"></div>
 
 <script>
