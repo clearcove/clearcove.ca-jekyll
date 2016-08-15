@@ -1,5 +1,5 @@
 ---
-title: NoSQL Databases: a Survey and Decision Guidance
+title: NoSQL Databases - a Survey and Decision Guidance
 layout: post
 permalink: /2016/08/nosql-databases-a-survey-and-decision-guidance
 ---
