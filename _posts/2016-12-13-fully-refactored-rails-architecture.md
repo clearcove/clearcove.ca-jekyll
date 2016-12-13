@@ -4,7 +4,7 @@ layout: post
 permalink: /2016/12/fully-refactored-rails-architecture
 ---
 
-The linked article provides a very thorough walk through a fully refactored Rails app using the example of a running tracker.
+The linked article provides a very thorough walk-through of a fully refactored Rails app using the example of a running tracker.
 
 When would you want a fully refactored Rails app? I’ve written about this earlier in [How to change objects](http://rails-recipes.clearcove.ca/pages/how_to_change_objects.html).
 
