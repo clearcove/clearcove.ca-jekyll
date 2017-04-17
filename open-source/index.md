@@ -84,19 +84,16 @@ A collection of Open Source projects we have released:
   <div class="span6">
     <div class="well">
       <h3>
-        Handdrawn for RaphaelJS
+        MultiRubyRunner
       </h3>
 
       <p>
-        A RaphaelJS plugin to give your vector graphics a hand drawn style. Great for sketch diagrams, charts and illustrations.
+        Execute Ruby code in different Ruby environments. It lets you for example call JRuby code from MRI. It relies on rbenv or RVM to manage the Ruby runtime environment.
       </p>
 
       <ul>
         <li>
-          <a href="http://handdrawn.clearcove.ca">Documentation</a>
-        </li>
-        <li>
-          <a href="https://github.com/jhund/raphael.handdrawn.js">Source code on github</a>
+          <a href="https://github.com/jhund/multi_ruby_runner">Documentation and source code on github</a>
         </li>
       </ul>
     </div>
@@ -218,4 +215,27 @@ A collection of Open Source projects we have released:
       </ul>
     </div>
   </div>
+
+<div class="row-fluid">
+  <div class="span6">
+    <div class="well">
+      <h3>
+        Handdrawn for RaphaelJS
+      </h3>
+
+      <p>
+        A RaphaelJS plugin to give your vector graphics a hand drawn style. Great for sketch diagrams, charts and illustrations.
+      </p>
+
+      <ul>
+        <li>
+          <a href="http://handdrawn.clearcove.ca">Documentation</a>
+        </li>
+        <li>
+          <a href="https://github.com/jhund/raphael.handdrawn.js">Source code on github</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
 </div>
