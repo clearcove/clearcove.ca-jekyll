@@ -8,8 +8,7 @@ layout: page
 
 <div class="well">
   <div class="marginalia_right">
-    <img class="img-polaroid" style="width: 200px;" alt="Jo Hund" src="/images/2008/07/portraitjo_medium-300x225.jpg" /></p>
-
+    <img class="img-polaroid" style="width: 200px;" alt="Jo Hund" src="/images/2008/07/portraitjo_medium-300x225.jpg" />
     <div class="img_caption">
       Hi there, I&#8217;m Jo Hund
     </div>
