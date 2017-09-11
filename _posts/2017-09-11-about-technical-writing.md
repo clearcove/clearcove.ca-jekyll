@@ -6,9 +6,9 @@ permalink: /2017/09/about-technical-writing
 
 Here is a collection of articles that I found helpful when it comes to technical writing:
 
-## [What to write](https://jacobian.org/writing/what-to-write/)
+## What to write
 
-Jacob Kaplan-Moss writes about three kinds of technical writing: 
+Jacob Kaplan-Moss writes about [three kinds of technical writing](https://jacobian.org/writing/what-to-write/): 
 
 > Tech docs can take a bunch of different forms ranging from high-level overviews, to step-by-step walkthroughs, to auto-generated API documentation. Unfortunately, no single format works for all users; there’s huge differences in the way that people learn, so a well-documented project needs to provide many different forms of documentation.
 >
@@ -18,24 +18,24 @@ Jacob Kaplan-Moss writes about three kinds of technical writing:
 > * low-level, deep-dive reference material.
 
 
-## [Technical style](https://jacobian.org/writing/technical-style/)
+## Technical style
 
-Jacob Kaplan-Moss writes about how to develop a writing style that produces great technical documentation.
+Jacob Kaplan-Moss writes about [how to develop a writing style that produces great technical documentation](https://jacobian.org/writing/technical-style/).
 
 
 
-## [You need an editor](https://jacobian.org/writing/editors/)
+## You need an editor
 
-After writing about what and how, Jacob Kaplan-Moss writes about the need to edit your writing. Ideally it's someone else, however he also has tips for self-editing.
+After writing about what and how, Jacob Kaplan-Moss writes about the [need to edit your writing](https://jacobian.org/writing/editors/). Ideally it's someone else, however he also has tips for self-editing.
 
 Two nuggets: 
 
 * Give it time - put some time between the tasks of writing and editing.
 * Shake things up - in order to get out of a rut, change the page margins so that the text flows differently and doesn't look as familiar.
 
-## [How to ask questions the smart way](http://www.catb.org/esr/faqs/smart-questions.html)
+## How to ask questions the smart way
 
-Eric S. Raymond and Rick Moen's gold standard for asking questions in technical forums:
+Eric S. Raymond and Rick Moen's [gold standard for asking technical questions](http://www.catb.org/esr/faqs/smart-questions.html):
 
 > In the world of hackers, the kind of answers you get to your technical questions depends as much on the way you ask the questions as on the difficulty of developing the answer. This guide will teach you how to ask questions in a way more likely to get you a satisfactory answer.
 
