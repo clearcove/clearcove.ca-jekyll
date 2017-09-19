@@ -7,7 +7,7 @@ layout: page
 </p>
 
 <div class="row-fluid">
-  <div class="span6">
+  <div class="span8 offset2">
     <div class="well">
       <div class="marginalia_right">
         <img class="img-polaroid" style="width: 200px;" alt="Jo Hund" src="/images/2008/07/portraitjo_medium-300x225.jpg" />
@@ -24,7 +24,11 @@ layout: page
         Jo Hund, founder of ClearCove Software, Inc.
       </p>
     </div>
+  </div>
+</div>
 
+<div class="row-fluid">
+  <div class="span6">
     <h3>
       We offer the following services:
     </h3>
