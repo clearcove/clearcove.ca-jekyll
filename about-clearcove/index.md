@@ -104,6 +104,7 @@ layout: page
       </li>
       <li>
         Timezone: Pacific Time
+        <span id="current_time"></span>
       </li>
       <li>
         Founded: 2006
@@ -178,3 +179,15 @@ layout: page
 </div>
 <script src="/script/moment.min.js"></script>
 <script src="/script/moment-timezone-with-data.min.js"></script>
+<script>
+  var curTimeEl = document.getElementById("current_time"); 
+  setInterval(
+    function(){ 
+      curTimeEl.innerHTML=(
+        ", current time at our office: " + 
+        moment().tz('America/Vancouver').format('h:mm a')
+      ); 
+    }, 
+    30000
+  );
+</script>
