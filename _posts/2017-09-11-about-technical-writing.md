@@ -6,7 +6,7 @@ permalink: /2017/09/about-technical-writing
 
 Here is a collection of articles that I found helpful when it comes to technical writing:
 
-## What to write
+### What to write
 
 Jacob Kaplan-Moss writes about [three kinds of technical writing](https://jacobian.org/writing/what-to-write/): 
 
@@ -18,13 +18,13 @@ Jacob Kaplan-Moss writes about [three kinds of technical writing](https://jacobi
 > * low-level, deep-dive reference material.
 
 
-## Technical style
+### Technical style
 
 Jacob Kaplan-Moss writes about [how to develop a writing style that produces great technical documentation](https://jacobian.org/writing/technical-style/).
 
 
 
-## You need an editor
+### You need an editor
 
 After writing about what and how, Jacob Kaplan-Moss writes about the [need to edit your writing](https://jacobian.org/writing/editors/). Ideally it's someone else, however he also has tips for self-editing.
 
@@ -33,7 +33,7 @@ Two nuggets:
 * Give it time - put some time between the tasks of writing and editing.
 * Shake things up - in order to get out of a rut, change the page margins so that the text flows differently and doesn't look as familiar.
 
-## How to ask questions the smart way
+### How to ask questions the smart way
 
 Eric S. Raymond and Rick Moen's [gold standard for asking technical questions](http://www.catb.org/esr/faqs/smart-questions.html):
 
