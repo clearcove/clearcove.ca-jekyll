@@ -176,4 +176,5 @@ layout: page
     </ul>
   </div>
 </div>
+<script src="/script/moment.min.js"></script>
 <script src="/script/moment-timezone-with-data.min.js"></script>
