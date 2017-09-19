@@ -180,14 +180,12 @@ layout: page
 <script src="/script/moment.min.js"></script>
 <script src="/script/moment-timezone-with-data.min.js"></script>
 <script>
-  var curTimeEl = document.getElementById("current_time"); 
-  setInterval(
-    function(){ 
-      curTimeEl.innerHTML=(
-        ", current time at our office: " + 
-        moment().tz('America/Vancouver').format('h:mm a')
-      ); 
-    }, 
-    30000
-  );
+  function renderCurTime() {
+    document.getElementById("current_time").innerHTML=(
+      ": " + 
+      moment().tz('America/Vancouver').format('h:mm a')
+    ); 
+  };
+  renderCurTime();
+  setInterval(renderCurTime, 30000);
 </script>
