@@ -182,8 +182,9 @@ layout: page
 <script>
   function renderCurTime() {
     document.getElementById("current_time").innerHTML=(
-      ": " + 
-      moment().tz('America/Vancouver').format('h:mm a')
+      "(" + 
+      moment().tz('America/Vancouver').format('h:mm a') +
+      ")"
     ); 
   };
   renderCurTime();
