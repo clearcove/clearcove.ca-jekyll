@@ -3,28 +3,28 @@ title: About ClearCove Software Inc.
 layout: page
 ---
 <p class="lead unconstrained" style="text-align: left;">
-  We develop and maintain full-stack online software systems. We cover the entire range from highly usable frontend apps to powerful back-end server software and everything inbetween. We are a truly global company, working with clients in North America and Europe.
+  We develop and maintain full-stack online software systems. We cover the entire range from highly usable frontend apps to powerful back-end server software and everything inbetween. We are a global company, working with clients in North America and Europe.
 </p>
-
-<div class="well">
-  <div class="marginalia_right">
-    <img class="img-polaroid" style="width: 200px;" alt="Jo Hund" src="/images/2008/07/portraitjo_medium-300x225.jpg" />
-    <div class="img_caption">
-      Hi there, I&#8217;m Jo Hund
-    </div>
-  </div>
-
-  <p class="unconstrained">
-    I started professional software development in 1998 and founded ClearCove Software Inc. in 2006. Outside of work I enjoy outdoor pursuits (hiking, trail running and open water rowing) and gardening. I live with my family in the beautiful Comox Valley on Vancouver Island, Canada. 
-  </p>
-
-  <p>
-    Jo Hund, founder of ClearCove Software, Inc.
-  </p>
-</div>
 
 <div class="row-fluid">
   <div class="span6">
+    <div class="well">
+      <div class="marginalia_right">
+        <img class="img-polaroid" style="width: 200px;" alt="Jo Hund" src="/images/2008/07/portraitjo_medium-300x225.jpg" />
+        <div class="img_caption">
+          Hi there, I&#8217;m Jo Hund
+        </div>
+      </div>
+
+      <p class="unconstrained">
+        I started professional software development in 1998 and founded ClearCove Software Inc. in 2006. Outside of work I enjoy outdoor pursuits (hiking, trail running and open water rowing) and gardening. I live with my family in the beautiful Comox Valley on Vancouver Island, Canada. 
+      </p>
+
+      <p>
+        Jo Hund, founder of ClearCove Software, Inc.
+      </p>
+    </div>
+
     <h3>
       We offer the following services:
     </h3>
@@ -56,7 +56,7 @@ layout: page
       Clients
     </h3>
     <p>
-      <span style="line-height: 1.5em;">We are privileged to work with fantastic SMB, non-profit, and government clients. Below is a selection of projects we have developed and continue to support:</span>
+      <span style="line-height: 1.5em;">We are privileged to work with fantastic SMB, non-profit, and government clients in North America and Europe. Below is a selection of projects we have developed and continue to support:</span>
     </p>
     <ul>
       <li>
@@ -153,22 +153,22 @@ layout: page
     <p>Capabilities:</p>
     <ul>
       <li>Functional programming, object oriented programming.</li>
-      <li>Internationalization: Unicode, localization, utf8, timezones, fonts.</li>
       <li>Parsing</li>
-      <li>Dynamic programming</li>
-      <li>Neural networks</li>
       <li>Natural language processing</li>
       <li>Machine learning</li>
-      <li>Diff-match-patch</li>
       <li>Regular expressions</li>
+      <li>Internationalization: Unicode, localization, utf8, timezones, fonts.</li>
+      <li>Dynamic programming</li>
+      <li>Neural networks</li>
+      <li>Diff-match-patch</li>
     </ul>
     <p>Tools:</p>
     <ul>
       <li>Sublime Text</li>
       <li>git</li>
-      <li>Command line</li>
+      <li>Command line terminal</li>
       <li>macOS</li>
-      <li>Whiteboards/hammock/gardening/running/sketching</li>
+      <li>Whiteboard/hammock/gardening/running</li>
     </ul>
   </div>
 </div>
