@@ -60,7 +60,7 @@ layout: page
       Clients
     </h3>
     <p>
-      <span style="line-height: 1.5em;">We are privileged to work with fantastic SMB, non-profit, and government clients in North America and Europe. Below is a selection of projects we have developed and continue to support:</span>
+      <span style="line-height: 1.5em;">We are privileged to work with fantastic commercial, non-profit, and government clients in North America and Europe. Below is a selection of projects we have developed and continue to support:</span>
     </p>
     <ul>
       <li>
