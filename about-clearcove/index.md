@@ -3,7 +3,7 @@ title: About ClearCove Software Inc.
 layout: page
 ---
 <p class="lead unconstrained" style="text-align: left;">
-  We develop and maintain full-stack online software systems. We cover the entire range from highly usable frontend apps to powerful back-end server software and everything inbetween. We are a global company, working with clients in North America and Europe.
+  We design, develop and maintain full-stack online software systems. We cover the entire range from highly usable frontend apps to powerful back-end server software and everything in between. We are a global company, working with clients in North America and Europe.
 </p>
 
 <div class="row-fluid">
@@ -34,7 +34,7 @@ layout: page
     </h3>
     <ul>
       <li>
-        Application development
+        Software architecture and development
       </li>
       <li>
         Hosting and deployment management
