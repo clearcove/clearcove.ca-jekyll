@@ -14,10 +14,6 @@ It's an advanced use case with the following features:
 * Persistence of edited text into re-frame app-db (as HTML).
 * Used in production with 1K editable sections on a single page.
 
-## Demo
-
-You can view the [demo](https://jhund.github.io/re-frame-and-reagent-and-slatejs/index.html).
-
-## Source code
+View the [demo](https://jhund.github.io/re-frame-and-reagent-and-slatejs/index.html).
 
 View the [source code](https://github.com/jhund/re-frame-and-reagent-and-slatejs).
