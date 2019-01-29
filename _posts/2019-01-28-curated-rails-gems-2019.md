@@ -1,0 +1,24 @@
+---
+title: Curated Rails Gems in 2019
+layout: post
+permalink: /2019/01/curated-rails-gems-2019
+---
+
+Below is a (non-exhaustive) list of curated Rails Gems we use at ClearCove in 2019:
+
+* [acts_as_list](https://github.com/swanandp/acts_as_list) - ActiveRecord plugin for managing lists.
+* [ahoy_matey](https://github.com/ankane/ahoy) - Analytics for Rails, in combination with Blazer.
+* [clearance](https://github.com/thoughtbot/clearance) - Rails authentication with email & password.
+* [closure_tree](https://github.com/ClosureTree/closure_tree) - Easily and efficiently make your ActiveRecord models support hierarchies.
+* [dotenv-rails](https://github.com/bkeepers/dotenv) - Load environment variables from `.env`.
+* [dry-validation](https://dry-rb.org/gems/dry-validation/) - Data validation based on predicate logic.
+* [filterrific](http://filterrific.clearcove.ca/) - Filter, search, and sort your ActiveRecord lists.
+* [haml](https://github.com/haml/haml) - HTML Abstraction Markup Language.
+* [pg](https://rubygems.org/gems/pg/) - Ruby interface to PostgreSQL.
+* [puma](https://github.com/puma/puma) - A Ruby web server built for concurrency.
+* [rubocop](https://github.com/rubocop-hq/rubocop) - Ruby static code analyzer and formatter. 
+* [sass-rails](https://github.com/rails/sass-rails) - Stylesheet engine for Sass.
+* [sidekiq-scheduler](https://github.com/moove-it/sidekiq-scheduler) - Lightweight job scheduler extension for Sidekiq.
+* [sidekiq](https://github.com/mperham/sidekiq) - Simple, efficient background processing for Ruby
+* [state_machines-activerecord](https://github.com/state-machines/state_machines-activerecord) - StateMachines Active Record Integration
+* [will_paginate](https://github.com/mislav/will_paginate) - For ActiveRecord pagination.
