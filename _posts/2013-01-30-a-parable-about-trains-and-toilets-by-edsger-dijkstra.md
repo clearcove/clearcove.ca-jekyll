@@ -16,5 +16,5 @@ This is a very interesting parable, covering the following topics:
 
 Link: [Edsger Dijkstra &#8211; A parable][2] via www.cs.virginia.edu
 
- [1]: http://clearcove.ca/2012/02/systems-thinking-in-it-the-vanguard-method/
+ [1]: https://clearcove.ca/2012/02/systems-thinking-in-it-the-vanguard-method/
  [2]: http://www.cs.virginia.edu/~cs655/readings/ewd594.html

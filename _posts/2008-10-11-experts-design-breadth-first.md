@@ -35,7 +35,7 @@ Here is an illustration that visualizes the concept: When you first start a proj
 Most projects I know pick a spot on the surface and start drilling deeper until they cross the green line &#8211; hopefully within budget. You see how the project makes small adjustments in direction, however every new step is connected sequentially to the previous one. Eventually the project crosses the green line &#8211; even though I know of enough projects who never cross the line of being a sufficient solution.
 
 <div id="attachment_283" style="width: 305px" class="wp-caption alignnone">
-  <img src="http://clearcove.ca/images/2008/10/lateral1.jpg" alt="Designing depth first" title="lateral1" width="295" height="329" class="size-full wp-image-283" />
+  <img src="https://clearcove.ca/images/2008/10/lateral1.jpg" alt="Designing depth first" title="lateral1" width="295" height="329" class="size-full wp-image-283" />
 
   <p class="wp-caption-text">
     Designing depth first
@@ -47,7 +47,7 @@ Most projects I know pick a spot on the surface and start drilling deeper until 
 You sit on that same surface, are faced with the same problem as above. What do you do? You drill in as many places as you can and see what you find. The advantage is that you won&#8217;t get stuck in a local minimum. You might find an approach that is far superior to your expectations. An approach where you can go further than anybody would have imagined:
 
 <div id="attachment_284" style="width: 306px" class="wp-caption alignnone">
-  <img src="http://clearcove.ca/images/2008/10/lateral2.jpg" alt="Designing breadth first" title="lateral2" width="296" height="338" class="size-full wp-image-284" />
+  <img src="https://clearcove.ca/images/2008/10/lateral2.jpg" alt="Designing breadth first" title="lateral2" width="296" height="338" class="size-full wp-image-284" />
 
   <p class="wp-caption-text">
     Designing breadth first

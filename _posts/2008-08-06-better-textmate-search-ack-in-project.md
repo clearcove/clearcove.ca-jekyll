@@ -26,7 +26,7 @@ Yesterday [Trevor][1] mentioned the [Ack TextMate bundle][2] he developed to pro
 <!--more-->
 
 <div id="attachment_204" style="width: 310px" class="wp-caption alignnone">
-  <a href="http://clearcove.ca/images/2008/08/ack-in-project1.jpg"><img src="http://clearcove.ca/images/2008/08/ack-in-project1-300x156.jpg" alt="The Ack results list showing context" title="ack-in-project" width="300" height="156" class="size-medium wp-image-204" /></a>
+  <a href="https://clearcove.ca/images/2008/08/ack-in-project1.jpg"><img src="https://clearcove.ca/images/2008/08/ack-in-project1-300x156.jpg" alt="The Ack results list showing context" title="ack-in-project" width="300" height="156" class="size-medium wp-image-204" /></a>
 
   <p class="wp-caption-text">
     The Ack results list showing context

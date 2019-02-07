@@ -13,7 +13,7 @@ excerpt: |
 layout: post
 permalink: /2008/05/networked-communications/
 other_media:
-  - http://clearcove.ca/images/2010/05/flickr-com-photos-graylight-2614809191.jpg
+  - https://clearcove.ca/images/2010/05/flickr-com-photos-graylight-2614809191.jpg
 categories:
   - Business
 ---

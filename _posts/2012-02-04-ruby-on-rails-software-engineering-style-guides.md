@@ -4,7 +4,7 @@ author: jhund
 layout: post
 permalink: /2012/02/ruby-on-rails-software-engineering-style-guides/
 other_media:
-  - http://clearcove.ca/images/2010/08/style_guide_screenshot.jpg
+  - https://clearcove.ca/images/2010/08/style_guide_screenshot.jpg
 categories:
   - Note to self
   - Process

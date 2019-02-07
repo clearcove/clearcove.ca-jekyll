@@ -17,7 +17,7 @@ If your Rails app requires cookies, this recipe is for you: It detects whether c
 This recipe checks for the presence of a specific cookie (&#8220;cookie\_test&#8221;). If it is present, the request continues normally. If it is not present, then it sets the cookie, redirects to the &#8220;cookie\_test&#8221; action and checks there whether the cookie is present. If the cookie is present, then everything continues on normally. If the cookie is still not present, then this is a strong indication that the user has cookies disabled. Then the recipe shows a page to the user explaining the cookie requirement. I leave it up to you to write the copy for that page.
 
 <div id="attachment_419" style="width: 358px" class="wp-caption alignnone">
-  <img src="http://clearcove.ca/images/2009/09/CookieDetectionFlowChart.png" alt="Flow chart for the cookie detection recipe" title="CookieDetectionFlowChart" width="348" height="460" class="size-full wp-image-419" />
+  <img src="https://clearcove.ca/images/2009/09/CookieDetectionFlowChart.png" alt="Flow chart for the cookie detection recipe" title="CookieDetectionFlowChart" width="348" height="460" class="size-full wp-image-419" />
 
   <p class="wp-caption-text">
     Flow chart for the cookie detection recipe

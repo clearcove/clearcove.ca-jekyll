@@ -14,7 +14,7 @@ permalink: /2008/05/information-accuracy/
 main_video:
   -
 other_media:
-  - http://clearcove.ca/images/2010/05/flickr-com-photos-kshathriya-8514296081.jpg
+  - https://clearcove.ca/images/2010/05/flickr-com-photos-kshathriya-8514296081.jpg
 categories:
   - Blog
 ---

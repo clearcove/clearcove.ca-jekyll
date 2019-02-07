@@ -14,7 +14,7 @@ excerpt: |
 layout: post
 permalink: /2008/05/information-efficienc/
 other_media:
-  - http://clearcove.ca/images/2010/05/flickr-com-photos-clearlyambiguous-282747181.jpg
+  - https://clearcove.ca/images/2010/05/flickr-com-photos-clearlyambiguous-282747181.jpg
 main_video:
   -
 categories:

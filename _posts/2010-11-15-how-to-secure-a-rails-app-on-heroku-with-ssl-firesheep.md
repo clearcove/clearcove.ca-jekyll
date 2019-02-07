@@ -4,7 +4,7 @@ author: jhund
 layout: post
 permalink: /2010/11/how-to-secure-a-rails-app-on-heroku-with-ssl-firesheep/
 other_media:
-  - http://clearcove.ca/images/2010/11/firesheep_screenshot.png
+  - https://clearcove.ca/images/2010/11/firesheep_screenshot.png
 main_video:
   -
 categories:

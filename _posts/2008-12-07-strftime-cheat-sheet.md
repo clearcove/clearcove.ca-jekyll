@@ -16,7 +16,7 @@ I have used strftime a lot lately on one of my projects. I could not find a user
 <div class="mceTemp">
   <dl id="attachment_347" class="wp-caption alignnone" style="width: 310px;">
     <dt class="wp-caption-dt">
-      <a href="http://clearcove.ca/images/2008/12/strftime_reference.pdf"><img class="size-medium wp-image-347" title="strftime reference" src="http://clearcove.ca/images/2008/12/strftime_ref-300x104.jpg" alt="strftime reference" width="300" height="104" /></a>
+      <a href="https://clearcove.ca/images/2008/12/strftime_reference.pdf"><img class="size-medium wp-image-347" title="strftime reference" src="https://clearcove.ca/images/2008/12/strftime_ref-300x104.jpg" alt="strftime reference" width="300" height="104" /></a>
     </dt>
   </dl>
 </div>
@@ -41,4 +41,4 @@ end
 end
 </pre>
 
- [1]: http://clearcove.ca/images/2008/12/strftime_reference.pdf
+ [1]: https://clearcove.ca/images/2008/12/strftime_reference.pdf
