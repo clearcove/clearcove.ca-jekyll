@@ -4,11 +4,9 @@ layout: post
 permalink: /2020/05/active-interaction-with-dry-validation
 ---
 
-The ActiveInteraction gem is super useful, however it's input argument filters are not as good as what can be accomplished with dry-validation.
+The [ActiveInteraction](https://github.com/AaronLasseigne/active_interaction) gem is super useful, however we like to use [dry-validation](https://github.com/dry-rb/dry-validation) for input argument validation.
 
-The example code illustrates how the two can be combined. The example uses an interaction to close an issue.
-
-This is what the interaction looks like:
+The example code illustrates how the two can be combined. The example uses an interaction to close an issue. This is what the interaction looks like:
 
 ``` ruby
 module Issues
@@ -35,9 +33,9 @@ module Issues
 
     end
 
-    object :args,
-           class: self.name + "::Args", # evaluates to "Issues::Close::Args", see ApplicationInteraction
-           converter: :new, # calls `Issues::Close::Args.new` with the inputs as argument.
+    # `class:`` evaluates to "Issues::Close::Args", see ApplicationInteraction.
+    # `converter: :new` calls `Issues::Close::Args.new` with the inputs as argument.
+    object :args, class: self.name + "::Args", converter: :new,
     validate :validate_args # See ApplicationInteraction
 
     # @return [Issue]
