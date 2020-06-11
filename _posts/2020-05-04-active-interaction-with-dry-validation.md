@@ -16,7 +16,7 @@ Below is a sketch for how to integrate ActiveInteraction, dry-validation, and [d
 * Interactions are invoked in the same way from controllers, background jobs, production consoles, or other interactions.
 * Support dependency injection to facilitate testing.
 
-# `Data` vs. `Behavior`
+# Data vs. Behavior
 
 At a high level, we distinguish these two concerns to help us structure our Rails application:
 
@@ -77,35 +77,33 @@ Add these folders to your Rails application:
 
 # Usage
 
-Below is an example for an interaction used to create issues:
-
-The interaction is invoked from a controller:
+Below is an example for an interaction used to create issues. The interaction is invoked from a controller:
 
 ```ruby
 # app/controllers/comms/issues_controller.rb
-...
+  ...
 
-def create
-  iao = Comms::Issues::Create.run(
-    args: params
-            .fetch(:issue, {})
-            .to_unsafe_h
-            .merge(reporter_id: current_user.id),
-  )
-  respond_to do |format|
-    format.html {
-      if iao.valid?
-        @issue = iao.result
-        redirect_to comms_issue_path(@issue)
-      else
-        @issue = iao
-        render(:new)
-      end
-    }
+  def create
+    iao = Comms::Issues::Create.run(
+      args: params
+              .fetch(:issue, {})
+              .to_unsafe_h
+              .merge(reporter_id: current_user.id),
+    )
+    respond_to do |format|
+      format.html {
+        if iao.valid?
+          @issue = iao.result
+          redirect_to comms_issue_path(@issue)
+        else
+          @issue = iao
+          render(:new)
+        end
+      }
+    end
   end
-end
 
-...
+  ...
 ```
 
 This is what the interaction looks like:
@@ -168,7 +166,7 @@ end
 Differences between this approach and regular ActiveInteractions:
 
 * Inputs are validated via `class ArgsContract` rather than input filters.
-* When refering to inputs, use `args`/`args.l_var` instead of `inputs`/local variables.
+* When refering to inputs, use `args.to_h`/`args.l_var` instead of `inputs`/local variables.
 
 # Conventions for interactions
 
@@ -228,6 +226,8 @@ require 'dry/container/stub'
 DepsContainer.enable_stubs!
 # Replace the `Git` class with your own mock class for testing:
 DepsContainer.stub(:git, MockGit)
+
+# Then exercise the interaction and verify that mocked methods on git were called with expected arguments...
 
 ```
 
