@@ -16,11 +16,11 @@ Below is a sketch for how to integrate ActiveInteraction, dry-validation, and [d
 * Interactions are invoked in the same way from controllers, background jobs, production consoles, or other interactions.
 * Support dependency injection to facilitate testing.
 
-# Data vs. Behavior
+## Data vs. Behavior
 
 At a high level, we distinguish these two concerns to help us structure our Rails application:
 
-## Data
+### Data
 
 All data related concerns live in `models`:
 
@@ -38,7 +38,7 @@ and `contracts`:
 
 NOTE: contracts can also live directly inside an interaction if they are not shared with other interactions.
 
-## Behavior
+### Behavior
 
 All behavior related concerns live in `interactions`:
 
@@ -46,7 +46,7 @@ All behavior related concerns live in `interactions`:
 * Multi-step and nested processes.
 * Interactions with external services.
 
-# Workspaces
+## Workspaces
 
 Another architectural choice we make is to group all behavior and ui related code into workspaces. Workspaces should be aligned with stable concepts in the application domain, e.g., user roles, departments, or stable software architectural concepts. Some examples:
 
@@ -57,7 +57,7 @@ Another architectural choice we make is to group all behavior and ui related cod
 * `anonymous` (Public faces that don't require authentication)
 * `teachers` (UI for users with a teacher role)
 
-# Installation
+## Installation
 
 Add these gems to your Gemfile:
 
@@ -75,7 +75,7 @@ Add these folders to your Rails application:
     * interactions
 ```
 
-# Usage
+## Usage
 
 Below is an example for an interaction used to create issues. The interaction is invoked from a controller:
 
@@ -168,7 +168,7 @@ Differences between this approach and regular ActiveInteractions:
 * Inputs are validated via `class ArgsContract` rather than input filters.
 * When refering to inputs, use `args.to_h`/`args.l_var` instead of `inputs`/local variables.
 
-# Conventions for interactions
+## Conventions for interactions
 
 * We pass it the same arguments we would pass to a Rails controller (Hash with values of basic Ruby types only). We do this so that the interaction can be invoked easily, no matter the context since all inputs are of basic types. That means we pass `user_id` instead of a `User` record.
 * Naming:
@@ -181,11 +181,11 @@ Differences between this approach and regular ActiveInteractions:
         * The external service, e.g., `Sso`
         * Action verb: For example `Authenticate`
 
-# Dependency injection
+## Dependency injection
 
 To facilitate testing we use dependency injection via `dry-container`. This allows us to stub/mock dependencies that are unsuitable for testing:
 
-## Usage
+### Usage
 
 Set up an app-wide dependencies container and register all dependencies you want to inject:
 
@@ -233,7 +233,7 @@ DepsContainer.stub(:git, MockGit)
 
 More info on [stubbing/mocking with Minitest](https://semaphoreci.com/community/tutorials/mocking-in-ruby-with-minitest).
 
-# How this works
+## How this works
 
 * ActiveInteraction provides very capable interactions, however the built in input validation is somewhat lacking.
 * dry-validation provides very powerful tools to validate interaction inputs.
