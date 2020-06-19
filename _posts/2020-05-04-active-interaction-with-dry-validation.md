@@ -115,6 +115,7 @@ module Comms
     # Creates an Issue
     class Create < ActiveInteraction::Base
 
+      # See further down for implementation of this module.
       include ActiveInteractionWithDryValidation
 
       # Contract for validating args
@@ -254,7 +255,7 @@ module ActiveInteractionWithDryValidation
       @args = args
       @args_contract_class = args_contract_class
       # Create attr_accessor for each top level schema key and assign the value
-      @args_contract_class::SCHEMA.key_map.each { |key|
+      @args_contract_class.schema.key_map.each { |key|
         self.class.class_eval { attr_accessor key.name }
         send("#{key.name}=", @args[key.name.to_sym])
       }
